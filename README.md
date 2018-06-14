@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
+# Included Packages
+
+1. Bootstrp 4
+2. Ngx-bootstrap
+3. Http Interceptor
+4. Custom error handler
+5. more on the way ....
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
