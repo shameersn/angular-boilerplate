@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PostListSevice } from './post-list.service';
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postListService: PostListSevice) { }
 
   ngOnInit() {
+    this.postListService.get('posts')
+    .subscribe(res => console.log('res' , res));
   }
 
 }
