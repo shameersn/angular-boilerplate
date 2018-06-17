@@ -40,9 +40,8 @@ export class CustomInterceptor implements HttpInterceptor {
       })
       .catch(response => {
         if (response instanceof HttpErrorResponse) {
-          console.log('Processing http error', response);
+          return Observable.throw(response);
         }
-        return Observable.throw(response);
       });
   }
 

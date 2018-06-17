@@ -18,14 +18,11 @@ export class ApiService {
     return this.http
       .get(this.getBaseUrl(url))
       .map((res: Response) => res.json())
-      .catch(this.handleError);
+      .catch((err: Response) => Observable.throw(err));
   }
 
   private getBaseUrl(url) {
     return this.baseUrl + url;
   }
 
-  private handleError(err: Response) {
-    return Observable.throw(err);
-  }
 }
