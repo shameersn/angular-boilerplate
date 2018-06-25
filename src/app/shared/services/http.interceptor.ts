@@ -34,15 +34,7 @@ export class CustomInterceptor implements HttpInterceptor {
     | HttpUserEvent<any>
   > {
     return next
-      .handle(this.addHeaders(req, this.authService.getAuthToken()))
-      .do((ev: HttpEvent<any>) => {
-        return ev;
-      })
-      .catch(response => {
-        if (response instanceof HttpErrorResponse) {
-          return Observable.throw(response);
-        }
-      });
+      .handle(this.addHeaders(req, this.authService.getAuthToken()));
   }
 
   addHeaders(req: HttpRequest<any>, token: string): HttpRequest<any> {
